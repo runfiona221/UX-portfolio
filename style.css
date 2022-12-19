@@ -1,0 +1,333 @@
+/* Author: Fiona Saiter
+Project: FionaCodes StyleSheet
+Date: July 14, 2021
+
+Brand Colors: #21B6A8 teal green
+Another option for the teal green color: #29bdb0;
+medium blue color color: #007fff; */
+/* dark midnight blue #003366; or #002448;*/
+
+/* @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,400;1,500;1,600&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* what do you thin about setting html to the 62.5% and all sizes to rem */
+
+/* html {
+  font-size: 62.5%
+} */
+
+body {
+  background-color: #2a92fa;
+  font-family: 'Cormorant SC', serif;
+  text-align: center;
+  line-height: 1.7;
+  font-size: 1em;
+  font-weight: 400;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+}
+
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 4vw 0;
+}
+
+/***** LANDING PAGE *****/
+
+.menu-toggle {
+  padding: 5px 15px;
+  border: 1px solid #002448;
+  border-radius: .50em;
+  background-color: #002448;
+  color: white;
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.2rem;
+}
+
+ul li a {
+  list-style: none;
+  text-decoration: none;
+  
+  
+}
+
+.welcome-container {
+  text-align: center;
+  margin-top: 12vh;
+}
+
+
+h2.animated,
+h1.animated {
+  /* margin-top: 10vh; */
+  font-size: 2em;
+  animation-name: moveInLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+}
+
+
+.glad-main {
+  font-size: 1.5em;
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  margin-top: .25em;
+
+  animation-name: moveInRight;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+}
+
+.welcome-container p {
+  font-size: 1.25em;
+  letter-spacing: .5ch;
+}
+
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+}
+
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translate(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
+
+
+/* background-color: #007fff; */
+
+
+#main-nav-button {
+  background-color: #002448;
+  color: white;
+}
+
+p,
+ul,
+ol {
+  margin-bottom: 1em;
+  color: white;
+}
+
+/***** Main Nav Bar *****/
+
+.me-hide {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  display: none;
+}
+
+li a {
+  margin: 1em;
+  text-decoration: none;
+  color: #002448;
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  list-style: none;
+}
+
+li a:hover {
+  color: white;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.img-frame {
+  margin: 2em auto;
+  max-width: 450px;
+}
+
+.content-frame {
+  margin: 0 10vw;
+}
+
+/***** =02 TYPOGRAPHY *****/
+
+h1 {
+  font-family: 'Cormorant SC', serif;
+  font-size: 2em;
+  font-size: clamp(1.25em, 5.1vw, 2em);
+  color: #002448;
+  letter-spacing: .25ch;
+}
+
+h1 a {
+  text-decoration: none;
+  color: hsl(210, 80%, 25%);
+  font-size: 1.5em;
+}
+
+h2,
+h3 {
+  margin-bottom: 0.5em;
+  color: #002448;
+}
+
+h2.main-welcome {
+  margin-bottom: 1em;
+}
+
+p {
+  font-size: 1em;
+  font-size: clamp(1em, 5.1vw, 1.5em);
+
+}
+
+
+
+
+
+/***** ABOUT PAGE *****/
+
+.fiona-about .description-fiona {
+ text-align: center;
+}
+
+/***** BLOG PAGE *****/
+
+.blog-container {
+  display: block;
+  margin-top: 3em;
+  margin-bottom: 8em;
+  
+}
+
+.blog-title {
+  font-size: 2.5em;
+  text-align: center;
+  
+}
+
+
+
+
+
+/***** CONTACT PAGE *****/
+
+
+.contact-form {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.contact-main-header {
+  margin-top: 6em;
+  margin-bottom: 1.5em;
+  font-size: 2.2em;
+  color: #002448;
+}
+
+label {
+  font-size: 1.3em;
+  color: #002448;
+}
+
+input {
+  margin-top: 1em;
+  margin-bottom: 3em;
+  border: none;
+  border-bottom: 1.5px solid #002448;
+  background-color: #2a92fa;
+}
+
+input::placeholder {
+  color: white;
+}
+
+textarea {
+  margin-top: 2em;
+  border: 1px solid #002448;
+  background-color: #2a92fa;
+}
+
+textarea::placeholder {
+  padding: 2em;
+  color: white;
+}
+
+#message-submit {
+  padding: 10px 30px;
+  border: 1px solid #002448;
+  border-radius: .50em;
+  background-color: #002448;
+  color: white;
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.2em;
+}
+
+#message-submit:hover {
+  font-size: 1.3em;
+  font-weight: 700;
+  background-color: #D5DAE1;
+  color: #002448;
+  border: 2px solid #002448;
+}
+
+
+/***** FOOTER SOCIAL *****/
+
+/* to far up in connect and about pages show lee */
+
+footer {
+  /* border: 1px solid red; */
+  margin-top: auto;
+}
+
+.nav-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-social ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.nav-social li i.fa {
+  font-size: 2em;
+  margin-bottom: .5em;
+}
