@@ -15,7 +15,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,400;1,500;1,600&display=swap"
     rel="stylesheet">
+    
   <link rel="stylesheet" href="style.css">
+  <script src="https://use.fontawesome.com/78cc9c710f.js"></script>
+
 </head>
 
 <body>
@@ -25,13 +28,30 @@
         <a href="index.html">FionaDesigns</a>
       </h1>
       <nav>
-        <button class="menu-toggle" type="button">Menu</button>
+        <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">
+          <svg class="hamburger" viewBox="0 0 100 100" width="40">
+                 <rect class="top"
+                  width="80" height="10"
+                  x="10" y="25" rx="5"></rect>
+
+                  <rect class="middle"
+                  width="80" height="10"
+                  x="10" y="45" rx="5"></rect>
+
+                  <rect class="bottom"
+                  width="80" height="10"
+                  x="10" y="65" rx="5"></rect>
+
+          </svg>
+        </button>
+
+        
 
         <ul class="me-hide">
           <li class="main-li-header"><a href="about.html">About</a></li>
           <li class="main-li-header"><a href="work.html">Work</a></li>
           <li class="main-li-header"><a href="blog.html">Blog</a></li>
-          <li class="main-li-header"><a href="saiter-ux-resume.pdf" target="_blank">Resume</a></li>
+          <li class="main-li-header"><a href="saiter-fiona-ux-resume.pdf" target="_blank">Resume</a></li>
           <li class="main-li-header"><a href="contact.html">Contact</a></li>
         </ul>
       </nav>

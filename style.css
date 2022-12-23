@@ -51,14 +51,38 @@ header {
 /***** LANDING PAGE *****/
 
 .menu-toggle {
-  padding: 5px 15px;
-  border: 1px solid #002448;
-  border-radius: .50em;
-  background-color: #002448;
-  color: white;
+  /* padding: 5px 15px; */
+  /* border: 1px solid #002448; */
+  /* border-radius: .50em; */
+  /* background-color: #002448; */
+  /* color: #2a92fa;; */
   font-family: 'Cormorant SC', serif;
   font-size: 1.2rem;
 }
+
+/* .hamburger {
+  display: block;
+  position: relative;
+  left: 0;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+
+  width: 2em;
+  height: 3px;
+}
+
+.hamburger::before {
+  bottom: 6px;
+}
+
+.hamburger::after {
+  top:
+} */
 
 ul li a {
   list-style: none;
