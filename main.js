@@ -1,28 +1,31 @@
-
-
-//  go over with Lee about how this works exactly again so I understand copied from our nav bar work we did together.
-
 console.log('hello world');
 
+// ***** GLOBALS
+
+const theStyleSheet = document.querySelector('link[href="style.css"');
 const btnMenuToggle = document.querySelector('.menu-toggle');
-console.log(btnMenuToggle);
-const elNavFrame = document.querySelector('nav ul');
-console.log(elNavFrame);
-const elBtnText = btnMenuToggle.innerText;
+const elNavFrame = document.querySelector('.nav-primary ul');
 
-
+// ***** FUNCTION DEFINITIONS
 function handleMenuToggleClick() {
   console.log('you clicked')
-
-  if (btnMenuToggle.innerText === 'Menu') {
-    btnMenuToggle.innerText = 'Close'
+  if (btnMenuToggle.innerHTML.toUpperCase() === 'MENU') {
+    btnMenuToggle.innerHTML = '&#10006;'
+    btnMenuToggle.setAttribute('aria-expanded', 'true');
+    btnMenuToggle.setAttribute('aria-label', 'Close the menu');
   } else {
-    btnMenuToggle.innerText = 'Menu'
+    btnMenuToggle.innerHTML = 'Menu';
+    btnMenuToggle.setAttribute('aria-expanded', 'false');
+    btnMenuToggle.setAttribute('aria-label', 'Show the menu');
   }
 
   elNavFrame.classList.toggle('me-hide')
-
-
 }
 
+// ***** ON PAGE LOAD
+document.body.classList.remove('no-js');
+if (theStyleSheet.rel === 'stylesheet') {
+  elNavFrame.classList.add('me-hide');
+  btnMenuToggle.removeAttribute('hidden');
+}
 btnMenuToggle.addEventListener('click', handleMenuToggleClick);

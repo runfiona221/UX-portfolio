@@ -1,39 +1,197 @@
-/* Author: Fiona Saiter
-Project: FionaCodes StyleSheet
-Date: July 14, 2021
+/*
+  Author: Fiona Saiter
+  Project:  Fiona UX Portfolio
+  Date: December 19, 20221
+*/
 
-Brand Colors: #21B6A8 teal green
-Another option for the teal green color: #29bdb0;
-medium blue color color: #007fff; */
-/* dark midnight blue #003366; or #002448;*/
-
-/* @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,400;1,500;1,600&display=swap'); */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap');
+/***** =01 RESET/GLOBALS/HELPER CLASSES *****/
+:root {
+  --clr-bkg: #2a92fa;
+  --clr-primary-text: #002448;
+  --clr-secondary-text: #fdfdfd;
+}
 
 * {
-  box-sizing: inherit;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* what do you thin about setting html to the 62.5% and all sizes to rem */
-
-/* html {
-  font-size: 62.5%
-} */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
 body {
-  background-color: #2a92fa;
+  min-height: 100vh;
+  background-color: var(--clr-bkg);
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-block-end: 12vh;
+  padding: 1em 4vw 0;
+}
+
+.img-frame {
+  max-width: 450px;
+  margin: 2em auto;
+}
+
+footer {
+  margin: auto;
+}
+
+/* Helper classes */
+.me-hide,
+.no-css {
+  display: none;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+  clip: rect(1px 1px 1px 1px);  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/***** =02 TYPOGRAPHY *****/
+body {
+  color: var(--clr-primary-text);
   font-family: 'Cormorant SC', serif;
-  text-align: center;
-  line-height: 1.7;
   font-size: 1em;
   font-weight: 400;
-  min-height: 100vh;
-
-  box-sizing: border-box;
+  line-height: 1.7;
+  text-align: center;
 }
+
+h1 {
+  font-size: 2em;
+  font-size: clamp(1.25em, 5.1vw, 2.5em);
+  letter-spacing: .25ch;
+}
+
+h1 a {
+  color: hsl(210, 80%, 25%);
+  text-decoration: none;
+}
+
+h2,
+h3 {
+  margin-block-end: 0.5em;
+  --clr-primary-text: #002448;
+}
+
+h2.main-welcome {
+  margin-block-end: 1em;
+}
+
+.welcome-container p {
+  color: var(--clr-secondary-text);
+  font-size: 1.25em;
+  letter-spacing: .5ch;
+  text-align: center;
+}
+
+p,
+ul,
+ol {
+  margin-block-end: 1em;
+}
+
+p {
+  font-size: 1em;
+  font-size: clamp(1em, 5.1vw, 1.5em);
+}
+
+/***** =03 NAVIGATION *****/
+/* If there is no javascript hide the menu button */
+.no-js .menu-toggle {
+  display: none;
+}
+
+.menu-toggle {
+  padding: 0.25em 1em;
+  color: var(--clr-secondary-text);
+  font-family: 'Cormorant SC', serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background-color: var(--clr-bkg);
+  border: none;
+  /*border: 1px solid #002448; */
+  /* border-radius: .50em; */
+}
+
+.menu-toggle:hover {
+  color: black;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+nav a {
+  color: #002448;
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.2em;
+  list-style: none;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--clr-secondary-text);
+}
+
+.nav-primary {
+  position: relative;
+}
+
+.nav-primary ul {
+  position: absolute;
+  top: 1.5em;
+  right: 0;
+  text-align: right;
+  border-right: 3px solid var(--clr-primary-text);
+}
+
+.nav-primary a {
+  padding-right: 0.7em;
+  padding-bottom: 3px;
+  color: var(--clr-secondary-text);
+}
+
+.nav-primary a:hover {
+  color: var(--clr-primary-text);
+  border-bottom: 2px solid var(--clr-primary-text);
+}
+
+/* Nav Social */
+.nav-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-social ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-social .icon-svg {
+  margin-block-end: .5em;
+  font-size: 1em;
+}
+
+/***** =04 LAYOUT *****/
 
 .page-wrap {
   display: flex;
@@ -41,61 +199,16 @@ body {
   min-height: 100vh;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em 4vw 0;
+.content-wrap {
+  max-width: 800px;
+  margin: 0 8vw;
 }
 
-/***** LANDING PAGE *****/
-
-.menu-toggle {
-  /* padding: 5px 15px; */
-  /* border: 1px solid #002448; */
-  /* border-radius: .50em; */
-  /* background-color: #002448; */
-  /* color: #2a92fa;; */
-  font-family: 'Cormorant SC', serif;
-  font-size: 1.2rem;
+@media screen and (min-width: 800px) {
+  .content-wrap {
+    margin-inline: auto;
+  }
 }
-
-/* .hamburger {
-  display: block;
-  position: relative;
-  left: 0;
-}
-
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-  content: '';
-  position: absolute;
-
-  width: 2em;
-  height: 3px;
-}
-
-.hamburger::before {
-  bottom: 6px;
-}
-
-.hamburger::after {
-  top:
-} */
-
-ul li a {
-  list-style: none;
-  text-decoration: none;
-  
-  
-}
-
-.welcome-container {
-  text-align: center;
-  margin-top: 12vh;
-}
-
 
 h2.animated,
 h1.animated {
@@ -106,254 +219,132 @@ h1.animated {
   animation-timing-function: ease-in;
 }
 
-
-.glad-main {
-  font-size: 1.5em;
-  display: block;
-  text-transform: uppercase;
-  margin-bottom: 1em;
-  margin-top: .25em;
-
-  animation-name: moveInRight;
-  animation-duration: 3s;
-  animation-timing-function: ease-in;
-}
-
-.welcome-container p {
-  font-size: 1.25em;
-  letter-spacing: .5ch;
-}
-
-
 @keyframes moveInLeft {
   0% {
-    opacity: 0;
     transform: translate(-100%);
+    opacity: 0;
   }
 
   100% {
-    opacity: 1;
     transform: translate(0);
+    opacity: 1;
   }
 
 }
-
 
 @keyframes moveInRight {
   0% {
-    opacity: 0;
     transform: translate(-100%);
+    opacity: 0;
   }
 
   100% {
-    opacity: 1;
     transform: translate(0);
+    opacity: 1;
   }
 }
 
-
-
-
-/* background-color: #007fff; */
-
-
-#main-nav-button {
-  background-color: #002448;
-  color: white;
-}
-
-p,
-ul,
-ol {
-  margin-bottom: 1em;
-  color: white;
-}
-
-/***** Main Nav Bar *****/
-
-.me-hide {
-  display: flex;
-  justify-content: flex-end;
-  list-style-type: none;
-  display: none;
-}
-
-li a {
-  margin: 1em;
-  text-decoration: none;
-  color: #002448;
-  font-family: 'Cormorant SC', serif;
-  font-size: 1.2em;
-  font-weight: 600;
-  list-style: none;
-}
-
-li a:hover {
-  color: white;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  padding: 5px;
-  margin: auto;
-}
-
-.img-frame {
-  margin: 2em auto;
-  max-width: 450px;
-}
-
-.content-frame {
-  margin: 0 10vw;
-}
-
-/***** =02 TYPOGRAPHY *****/
-
-h1 {
-  font-family: 'Cormorant SC', serif;
-  font-size: 2em;
-  font-size: clamp(1.25em, 5.1vw, 2em);
-  color: #002448;
-  letter-spacing: .25ch;
-}
-
-h1 a {
-  text-decoration: none;
-  color: hsl(210, 80%, 25%);
-  font-size: 1.5em;
-}
-
-h2,
-h3 {
-  margin-bottom: 0.5em;
-  color: #002448;
-}
-
-h2.main-welcome {
-  margin-bottom: 1em;
-}
-
-p {
-  font-size: 1em;
-  font-size: clamp(1em, 5.1vw, 1.5em);
-
-}
-
-
-
+/***** LANDING PAGE *****/
 
 
 /***** ABOUT PAGE *****/
 
-.fiona-about .description-fiona {
- text-align: center;
-}
 
 /***** BLOG PAGE *****/
 
 .blog-container {
   display: block;
-  margin-top: 3em;
-  margin-bottom: 8em;
-  
+  margin-block-start: 3em;
+  margin-block-end: 8em;
+
 }
 
 .blog-title {
   font-size: 2.5em;
   text-align: center;
-  
 }
-
-
-
-
 
 /***** CONTACT PAGE *****/
 
-
-.contact-form {
-  margin: 0 auto;
+/* .contact-form {
   width: 50%;
-}
+  margin: 0 auto;
+} */
 
 .contact-main-header {
-  margin-top: 6em;
-  margin-bottom: 1.5em;
-  font-size: 2.2em;
+  margin-block-end: 1.5em;
   color: #002448;
+  font-size: 2.2em;
+}
+
+.item-container {
+  margin-inline: auto;
 }
 
 label {
-  font-size: 1.3em;
   color: #002448;
+  font-size: 1.3em;
+  text-align: left;
 }
 
 input {
   margin-top: 1em;
-  margin-bottom: 3em;
+  margin-block-end: 3em;
+  background-color: var(--clr-bkg);
   border: none;
   border-bottom: 1.5px solid #002448;
-  background-color: #2a92fa;
 }
 
 input::placeholder {
-  color: white;
+  color: var(--clr-secondary-text);
 }
 
 textarea {
-  margin-top: 2em;
+  width: 100%;
+  margin-block-start: 2em;
+  background-color: var(--clr-bkg);
   border: 1px solid #002448;
-  background-color: #2a92fa;
 }
 
 textarea::placeholder {
   padding: 2em;
-  color: white;
+  color: var(--clr-secondary-text);
 }
 
 #message-submit {
   padding: 10px 30px;
-  border: 1px solid #002448;
-  border-radius: .50em;
-  background-color: #002448;
-  color: white;
+  color: var(--clr-secondary-text);
   font-family: 'Cormorant SC', serif;
   font-size: 1.2em;
+  background-color: #002448;
+  border: 1px solid #002448;
+  border-radius: .50em;
 }
 
 #message-submit:hover {
+  color: #002448;
   font-size: 1.3em;
   font-weight: 700;
   background-color: #D5DAE1;
-  color: #002448;
   border: 2px solid #002448;
 }
 
+/***** WORK PAGE *****/
 
-/***** FOOTER SOCIAL *****/
-
-/* to far up in connect and about pages show lee */
-
-footer {
-  /* border: 1px solid red; */
-  margin-top: auto;
+.fiona-work .welcome-container {
+  margin-bottom: 10em;
 }
 
-.nav-social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.card {
+  margin-bottom: 2em;
 }
 
-.nav-social ul {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
+.card h2 {
+  margin-bottom: 1em;
+
 }
 
-.nav-social li i.fa {
-  font-size: 2em;
-  margin-bottom: .5em;
+.card img {
+  margin-bottom: 2em;
 }
+
