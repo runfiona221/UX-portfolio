@@ -290,11 +290,19 @@ label {
 input {
   margin-top: 1em;
   margin-block-end: 3em;
+  padding: 0.5em;
   background-color: var(--clr-bkg);
-  border: none;
-  border-bottom: 1.5px solid #002448;
+  border: 1px solid #002448;
+  border-radius: 4px;
 }
 
+textarea:focus,
+input:focus {
+  background-color: transparent;
+  outline: 1px solid #002448;
+} 
+
+textarea::placeholder,
 input::placeholder {
   color: var(--clr-secondary-text);
 }
@@ -302,13 +310,10 @@ input::placeholder {
 textarea {
   width: 100%;
   margin-block-start: 2em;
+  padding: 2em;
   background-color: var(--clr-bkg);
   border: 1px solid #002448;
-}
-
-textarea::placeholder {
-  padding: 2em;
-  color: var(--clr-secondary-text);
+  border-radius: 4px;
 }
 
 #message-submit {
